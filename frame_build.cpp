@@ -36,7 +36,8 @@ namespace proto_input
         return res;
     }
 
-    std::vector<std::tuple<double, FileTag, std::string> > mergeInputSequence(std::vector<std::list<std::tuple<double, FileTag, std::string> > >&& data)
+    std::vector<std::tuple<double, FileTag, std::string> > mergeInputSequence
+        (std::vector<std::list<std::tuple<double, FileTag, std::string> > >&& data)
     {
         auto comp = [](auto& l, auto& r) { return std::get<0>(l) < std::get<0>(r); };
         //size_t frame_num = std::min_element(data.begin(), data.end(), [](auto& l, auto& r) { return l.size() < r.size(); })->size();

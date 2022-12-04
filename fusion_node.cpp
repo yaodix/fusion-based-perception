@@ -28,9 +28,9 @@ int main(int argc, char** argv)
     //File name is time stamp, all object detected by same sensor build a input sequence by function buildSensorInputSequence.
     //All input sequence sorted by time stamp and merge into one input sequence by function mergeInputSequence.
     //Next, earse the element so that the each four adjacent elements have different FileTag and sort the four adjacent elements by FileTag.
-    std::vector<std::tuple<double, proto_input::FileTag, std::string> >&& data_frame_seq = proto_input::mergeInputSequence({
+    std::vector<std::tuple<double, proto_input::FileTag, std::string>>&& data_frame_seq = proto_input::mergeInputSequence({
         proto_input::buildSensorInputSequence(argv[2], "Location", proto_input::FileTag::LOCATION),
-        proto_input::buildSensorInputSequence(argv[3], "Lidar", proto_input::FileTag::CAMERA),
+        proto_input::buildSensorInputSequence(argv[3], "Camera", proto_input::FileTag::CAMERA),
         proto_input::buildSensorInputSequence(argv[4], "Lidar", proto_input::FileTag::LIDAR),
         //proto_input::buildSensorInputSequence(argv[5], "Radar", FileTag::RADAR),
     });
